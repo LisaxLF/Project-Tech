@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/homestyles.css">
+    <title>Gamerz</title>
+</head>
+
+<body class="homepage">
+    <header>
+        <nav>
+            <a>
+                <img src="/images/icons/menuIcon.svg" alt="Hamberger menu">
+            </a>
+        </nav>
+        <div>
+            <div>
+                <img src="/images/icons/settingIcon.svg" alt="Hamberger menu">
+            </div>
+            <div>
+            </div>
+        </div>
+    </header>
+    <article>
+        <div>
+            <div>
+                <img src="/images/gebouwen.jpg" alt="profile pic gamer">
+                <div>
+                    <h3>
+                        <%= gamer.gamertag %>
+                    </h3>
+                    <p>5 minuten geleden actief</p>
+                </div>
+            </div>
+            <img src="/images/icons/playstationIcon.svg">
+        </div>
+        <div></div>
+        <section>
+            <article>
+                <h2>
+                    About me
+                </h2>
+                <p>
+                    <%= gamer.bio %>
+                </p>
+            </article>
+            <section>
+                <h2>
+                    Game Library
+                </h2>
+                <article class="game">
+                    <div class="banner">
+                        <div class="hoursplayed">
+                            <p>
+                                TOTAL HOURS PLAYED:
+                            </p>
+                            <P>
+                                44 days and 8 hours
+                            </P>
+                        </div>
+                        <div class="ranks">
+                            <div class="rank">
+                                <p>duel</p>
+                                <p>1v1</p>
+                                <img src= images/icons/champ.png>
+                            </div>
+                            <div class="rank">
+                                <p>doubles</p>
+                                <p>2v2</p>
+                                <img src="/images/icons/champ2.png">
+                            </div>
+                            <div class="rank">
+                                <p>standard</p>
+                                <p>3v3</p>
+                                <img src="/images/icons/champ3.png">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+    </article>
+    <section>
+        <button>
+            <img src="/images/icons/cancel.svg" alt="no match">
+        </button>
+        <button>
+            <img src="/images/icons/Correct.svg" alt="match">
+        </button>
+    </section>
+
+</body>
+
+</html>
