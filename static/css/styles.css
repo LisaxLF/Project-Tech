@@ -409,7 +409,7 @@ p {
 .homepage article:first-of-type section:last-of-type div:first-of-type article:first-of-type article,
 .settings article:first-of-type section:last-of-type div:first-of-type article:first-of-type article,
 .settings section:nth-of-type(2) div:first-of-type article:first-of-type {
-    background-image: url(/images/standard.png);
+    background-image: url(/static/images/standard.png);
     background-size: 15em;
 }
 
@@ -430,14 +430,11 @@ p {
 
 .homepage article:first-of-type section:last-of-type div:first-of-type article:first-of-type article img:first-child,
 .homepage article:first-of-type section:last-of-type div:first-of-type article:nth-of-type(2) article img:first-child,
-.homepage article:first-of-type section:last-of-type div:first-of-type article:nth-of-type(3) article img:first-child,
-.settings article:first-of-type section:last-of-type div:first-of-type article:first-of-type article img:first-child,
+.homepage article:first-of-type section:last-of-type div:first-of-type article:nth-of-type(3) article img:first-child .settings article:first-of-type section:last-of-type div:first-of-type article:first-of-type article img:first-child,
 .settings article:first-of-type section:last-of-type div:first-of-type article:nth-of-type(2) article img:first-child,
 .settings article:first-of-type section:last-of-type div:first-of-type article:nth-of-type(3) article img:first-child {
     width: 2.5em;
 }
-
-
 
 .homepage article:first-of-type section:last-of-type div:first-of-type article:first-of-type article p:nth-of-type(1),
 .homepage article:first-of-type section:last-of-type div:first-of-type article:nth-of-type(2) article p:nth-of-type(1),
@@ -448,8 +445,6 @@ p {
     text-align: center;
     margin: .5em 0;
     font-size: .9em;
-    text-transform: uppercase;
-    font-weight: 500;
 }
 
 .homepage article:first-of-type section:last-of-type div:first-of-type article:first-of-type article p:nth-of-type(2),
@@ -662,11 +657,11 @@ textarea {
     font-size: 1em;
 }
 
-.settings section:nth-of-type(3) form input[type='checkbox'] {
+.settings section:nth-of-type(3) form input {
     margin-right: .5em;
 }
 
-.settings section:nth-of-type(3) > input[type='submit'] {
+.settings section:nth-of-type(3) > input {
     background: #17698d;
     mix-blend-mode: normal;
     color: white;
@@ -677,7 +672,7 @@ textarea {
 }
 
 /* TEST */
-.sliderStandard, .sliderDoubles {
+.slider {
     display: none;
     position: absolute;
     top: 0;
@@ -690,10 +685,9 @@ textarea {
     background: linear-gradient(180deg, rgba(116, 172, 197, 0) 0.5%, #A082E1 51.02%, rgba(116, 172, 197, 0) 99.48%);;
 }
 
-.slideStandard img, .sliderDoubles img {
+.slide img {
     width: 100%;
     height: 100%;
     transform: scale(0.4);
     scroll-snap-align: start;
 }
-

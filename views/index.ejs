@@ -21,20 +21,20 @@
     <article>
         <div>
             <div>
-                <img src="/images/gebouwen.jpg" alt="profile pic gamer">
+                <img src="<%= data[0].gamerPhoto %>" alt="profile pic gamer">
                 <div>
                     <h3>
-                        <%= data[0] %>
+                        <%= data[0].gamerTag %>
                     </h3>
                     <p>5 minuten geleden actief</p>
                 </div>
             </div>
-            <img src="/images/icons/playstationIcon.svg">
+            <img src='<%= data[0].console %>'>
         </div>
         <div>
             <ul>
-                <li>Rotation queen</li>
-                <li>Super saver</li>
+                <li><%= data[0].gamerQualityOne %></li>
+                <li><%= data[0].gamerQualityTwo %></li>
             </ul>
         </div>
         <article>
@@ -46,11 +46,11 @@
             </p>
         </article>
         <ul>
-            <li>Goals<p>5151</p>
+            <li>Goals<p> <%= data[0].gameStats[0] %></p>
             </li>
-            <li>Assists<p>4845</p>
+            <li>Assists<p> <%= data[0].gameStats[1] %></p>
             </li>
-            <li>Saves<p>4584</p>
+            <li>Saves<p> <%= data[0].gameStats[2] %></p>
             </li>
         </ul>
         <article>
@@ -58,8 +58,7 @@
                 About me
             </h2>
             <p>
-                Hi i am Lisa, 23 years old. I am currently looking for a good teammate in rocket league, cause all
-                of my friends suck. I really want to get grand champ before the season ends!
+                <%= data[0].gamerBio %>
             </p>
         </article>
         <section>
@@ -69,12 +68,13 @@
             <div>
                 <article>
                     <article>
-                        <img src="/images/icons/champ2.png">
+                        <img src="<%= data[0].standardStats[0] %>">
                         <p>
-                            CHAMP 2 <br>
-                            DIV 1
+                            <%= data[0].standardStats[1] %>
                         </p>
-                        <p>1320 MMR</p>
+                        <p>
+                            <%= data[0].standardStats[2] %>
+                        </p>
                     </article>
                     <div>
                         <h4>standard</h4>
@@ -83,12 +83,11 @@
                 </article>
                 <article>
                     <article>
-                        <img src="/images/icons/champ2.png">
+                        <img src="<%= data[0].doublesStats[0] %>">
                         <p>
-                            CHAMP 2 <br>
-                            DIV 1
+                            <%= data[0].doublesStats[1] %>
                         </p>
-                        <p>1320 MMR</p>
+                        <p><%= data[0].doublesStats[2] %></p>
                     </article>
                     <div>
                         <h4>doubles</h4>
@@ -97,12 +96,11 @@
                 </article>
                 <article>
                     <article>
-                        <img src="/images/icons/champ2.png">
+                        <img src="<%= data[0].duelStats[0] %>">
                         <p>
-                            CHAMP 2 <br>
-                            DIV 1
+                            <%= data[0].duelStats[1] %>
                         </p>
-                        <p>1320 MMR</p>
+                        <p><%= data[0].duelStats[2] %></p>
                     </article>
                     <div>
                         <h4>duel</h4>
@@ -122,4 +120,5 @@
     </section>
     <script src="/js/index.js"></script>
 </body>
+
 </html>

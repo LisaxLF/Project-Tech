@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/homestyles.css">
+  <link rel="stylesheet" href="/static/css/homestyles.css">
   <title>Gamerz</title>
 </head>
 
@@ -13,10 +13,10 @@
   <header>
     <nav>
       <a>
-        <img src="/images/icons/menuIcon.svg" alt="Hamberger menu">
+        <img src="/static/images/icons/menuIcon.svg" alt="Hamberger menu">
       </a>
     </nav>
-    <img src="/images/icons/settingIcon.svg" alt="Hamberger menu">
+    <img src="/static/images/icons/settingIcon.svg" alt="Hamberger menu">
   </header>
   <div>
     <h1>Instellingen</h1>
@@ -25,20 +25,20 @@
   <article>
     <div>
       <div>
-        <img src="/images/gebouwen.jpg" alt="profile pic gamer">
+        <img src="/static/images/gebouwen.jpg" alt="profile pic gamer">
         <div>
           <h3>
-            <%= data[0].gamertag %>
+            @LisaLF
           </h3>
           <p>5 minuten geleden actief</p>
         </div>
       </div>
-      <img src="/images/icons/playstationIcon.svg">
+      <img src="/static/images/icons/playstationIcon.svg">
     </div>
     <div>
       <ul>
-        <li><%= data[0].prefQualityOne %></li>
-        <li><%= data[0].prefQualityTwo %></li>
+        <li>Rotation queen</li>
+        <li>Super saver</li>
       </ul>
     </div>
     <article>
@@ -61,7 +61,7 @@
       <div>
         <article>
           <article>
-            <img src="/images/icons/champ.png">
+            <img src="/static/images/icons/champ.png">
             <p>
               CHAMP 2 <br>
               DIV 1
@@ -75,7 +75,7 @@
         </article>
         <article>
           <article>
-            <img src="/images/icons/champ.png">
+            <img src="/static/images/icons/champ.png">
             <p>
               CHAMP 2 <br>
               DIV 1
@@ -89,7 +89,7 @@
         </article>
         <article>
           <article>
-            <img src="/images/icons/champ.png">
+            <img src="/static/images/icons/champ.png">
             <p>
               CHAMP 2 <br>
               DIV 1
@@ -106,21 +106,21 @@
   </article>
   <section>
     <div>
-      <form id="form_text" action="/profilePref.ejs" method="post">
+      <form action="">
         <div>
           <label for="fname">Gamertag</label><br>
-          <input type="text" id="" name="user_gamertag" value="<%= data[0].gamertag %>"><br>
+          <input type="text" id="fname" name="fname" value="Lisa"><br>
         </div>
         <div>
           <label for="lname">About me</label><br>
-          <textarea id="" name="user_gamerbio" rows="5" cols="50"> <%= data[0].gamerBio %>
+          <textarea id="w3review" name="lname" rows="5" cols="50">Hi i am Lisa, 23 years old. I am currently looking for a good teammate in rocket league, cause all of my friends suck. I really want to get grand champ before the season ends!
         </textarea>
         </div>
         <div>
           <label for="fname">Crossplay</label><br>
-          <input type="radio" id="crossplay_on" name="fav_language" value="true">
+          <input type="radio" id="html" name="fav_language" value="HTML">
           <label for="html">PLAY WITH OTHER PLATFORMS</label><br>
-          <input type="radio" id="crossplay_off" name="fav_language" value="false">
+          <input type="radio" id="css" name="fav_language" value="CSS">
           <label for="css">PLAY WITH SAME PLATFORM</label><br>
         </div>
       </form>
@@ -130,22 +130,22 @@
     <h2>IM looking for</h2>
     <h4>PREFERABLE RANK</h4>
     <div>
-      <article>
+      <article style="background-color: purple;">
         <div>
-          <a class="editStandard"><img src="/images/icons/change.png"></a>
-          <img class='currentImgStandard' src="/images/icons/champ2.png">
-          <div class="sliderStandard">
-            <div class="slideStandard" id="slideStandard-1"> <a>
-                <img src="/images/icons/champ.png">
+          <a><img src="/static/images/icons/change.png"></a>
+          <img src="/static/images/icons/champ2.png">
+          <div class="slider">
+            <div class="slide" id="slide-1"> <a>
+                <img src="/static/images/icons/champ.png">
               </a></div>
-            <div class="slideStandard" id="slideStandard-2">
+            <div class="slide" id="slide-2">
               <a>
-                <img src="/images/icons/champ2.png">
+                <img src="/static/images/icons/champ2.png">
               </a>
             </div>
-            <div class="slideStandard" id="slideStandard-3">
+            <div class="slide" id="slide-3">
               <a>
-                <img src="/images/icons/champ3.png">
+                <img src="/static/images/icons/champ3.png">
               </a>
             </div>
           </div>
@@ -157,23 +157,8 @@
       </article>
       <article>
         <div>
-          <a class="editDoubles"><img src="/images/icons/change.png"></a>
-          <img class='currentImgDoubles' src="/images/icons/champ2.png">
-          <div class="sliderDoubles">
-            <div class="slideDoubles" id="slideDoubles-1"> <a>
-                <img src="/images/icons/champ.png">
-              </a></div>
-            <div class="slideDoubles" id="slideDoubles-2">
-              <a>
-                <img src="/images/icons/champ2.png">
-              </a>
-            </div>
-            <div class="slideDoubles" id="slideDoubles-3">
-              <a>
-                <img src="/images/icons/champ3.png">
-              </a>
-            </div>
-          </div>
+          <a><img src="/static/images/icons/change.png"></a>
+          <img src="/static/images/icons/champ2.png">
         </div>
         <div>
           <h4>doubles</h4>
@@ -185,33 +170,39 @@
   <section>
     <h4>PREFERABLE QUALITIES</h4>
     <p>U can pick two</p>
-    <form method="post" name="form_name" id="form_check">
-      <label>
-        <input type="checkbox" name="check">Rotation queen
+    <form>
+      <label class="container">
+        <input type="checkbox" checked="checked">Rotation queen
       </label>
-      <label>
-        <input type="checkbox" name="check" >SUPER SAVER
+
+      <label class="container">
+        <input type="checkbox">SUPER SAVER
       </label>
-      <label>
-        <input type="checkbox" name="check">ASSISTANT
+
+      <label class="container">
+        <input type="checkbox">ASSISTANT
       </label>
-      <label>
-        <input type="checkbox" name="check">MECHANICAL GOD
+
+      <label class="container">
+        <input type="checkbox">MECHANICAL GOD
       </label>
-      <label>
-        <input type="checkbox" name="check">OFFENSE PRO
+
+      <label class="container">
+        <input type="checkbox">OFFENSE PRO
       </label>
-      <label>
-        <input type="checkbox" name="check">DEFENSE PRO
+
+      <label class="container">
+        <input type="checkbox">DEFENSE PRO
       </label>
-      <label>
-        <input type="checkbox" name="check">DOESNT MATTER
+
+      <label class="container">
+        <input type="checkbox">DOESNT MATTER
       </label>
     </form>
 
-    <input class="btnOpslaan" type="submit" value="VOORKEUREN OPSLAAN">
+    <input type="submit" value="VOORKEUREN OPSLAAN">
   </section>
-  <script src="/js/test.js"></script>
+  <script src="/static/js/test.js"></script>
 </body>
 
 </html>
