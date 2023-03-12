@@ -28,7 +28,7 @@
         <img src="/images/gebouwen.jpg" alt="profile pic gamer">
         <div>
           <h3>
-            <%= data[0].gamertag %>
+            <%= data[0].gamerTag %>
           </h3>
           <p>5 minuten geleden actief</p>
         </div>
@@ -37,8 +37,8 @@
     </div>
     <div>
       <ul>
-        <li><%= data[0].prefQualityOne %></li>
-        <li><%= data[0].prefQualityTwo %></li>
+        <li><%= data[0].gamerQualityOne %></li>
+        <li><%= data[0].gamerQualityTwo %></li>
       </ul>
     </div>
     <article>
@@ -109,18 +109,18 @@
       <form id="form_text" action="/profilePref.ejs" method="post">
         <div>
           <label for="id">Gamertag</label><br>
-          <input type="text" id="id" name="user_gamertag" placeholder="<%= data[0].gamertag %>" value=""><br>
+          <input type="text" id="id" name="" value="<%= data[0].gamerTag %>"><br>
         </div>
         <div>
           <label for="id">About me</label><br>
-          <textarea id="id" name="user_gamerbio" rows="5" cols="50"> <%= data[0].gamerBio %>
+          <textarea id="id" name="user_gamerbio" rows="5" cols="50" value="gamerBio" > <%= data[0].gamerBio %>
         </textarea>
         </div>
         <div>
           <label for="id">Crossplay</label><br>
-          <input type="radio" id="id" name="fav_language" value="true">
+          <input type="radio" id="id" name="fav_language" value="crossplayOn">
           <label for="id">PLAY WITH OTHER PLATFORMS</label><br>
-          <input type="radio" id="id" name="fav_language" value="false">
+          <input type="radio" id="id" name="fav_language" value="crossplayOff">
           <label for="id">PLAY WITH SAME PLATFORM</label><br>
         </div>
       </form>
@@ -187,25 +187,25 @@
     <p>U can pick two</p>
     <form method="post" name="form_name" id="form_check">
       <label>
-        <input type="checkbox" name="check"> Rotation queen
+        <input type="checkbox" name="check" value="ROTATIONQUEEN"> Rotation queen
       </label>
       <label>
-        <input type="checkbox" name="check"> SUPER SAVER
+        <input type="checkbox" name="check" value="SUPERSAVER" > SUPER SAVER
       </label>
       <label>
-        <input type="checkbox" name="check"> ASSISTANT
+        <input type="checkbox" name="check" value="ASSISTANT"> ASSISTANT
       </label>
       <label>
-        <input type="checkbox" name="check"> MECHANICAL GOD
+        <input type="checkbox" name="check" value="MECHANICALGOD"> MECHANICAL GOD
       </label>
       <label>
-        <input type="checkbox" name="check"> OFFENSE PRO
+        <input type="checkbox" name="check" value="OFFENSEPRO"> OFFENSE PRO
       </label>
       <label>
-        <input type="checkbox" name="check"> DEFENSE PRO
+        <input type="checkbox" name="check" value="DEFENSEPRO"> DEFENSE PRO
       </label>
       <label>
-        <input type="checkbox" name="check"> DOESNT MATTER
+        <input type="checkbox" name="check" value="DOESNTMATTER"> DOESNT MATTER
       </label>
     </form>
     <input class="btnOpslaan" type="submit" value="VOORKEUREN OPSLAAN">
