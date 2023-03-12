@@ -37,6 +37,10 @@ const port = 3000
 // Set the View Engine or Template Engine
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+app.use(express.urlencoded({
+  extended: true
+}))
+app.use(express.json())
 
 // static content gebruiken
 app.use(express.static(__dirname + '/static'));

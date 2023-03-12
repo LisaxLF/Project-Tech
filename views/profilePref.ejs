@@ -108,20 +108,20 @@
     <div>
       <form id="form_text" action="/profilePref.ejs" method="post">
         <div>
-          <label for="fname">Gamertag</label><br>
-          <input type="text" id="" name="user_gamertag" value="<%= data[0].gamertag %>"><br>
+          <label for="id">Gamertag</label><br>
+          <input type="text" id="id" name="user_gamertag" placeholder="<%= data[0].gamertag %>" value=""><br>
         </div>
         <div>
-          <label for="lname">About me</label><br>
-          <textarea id="" name="user_gamerbio" rows="5" cols="50"> <%= data[0].gamerBio %>
+          <label for="id">About me</label><br>
+          <textarea id="id" name="user_gamerbio" rows="5" cols="50"> <%= data[0].gamerBio %>
         </textarea>
         </div>
         <div>
-          <label for="fname">Crossplay</label><br>
-          <input type="radio" id="crossplay_on" name="fav_language" value="true">
-          <label for="html">PLAY WITH OTHER PLATFORMS</label><br>
-          <input type="radio" id="crossplay_off" name="fav_language" value="false">
-          <label for="css">PLAY WITH SAME PLATFORM</label><br>
+          <label for="id">Crossplay</label><br>
+          <input type="radio" id="id" name="fav_language" value="true">
+          <label for="id">PLAY WITH OTHER PLATFORMS</label><br>
+          <input type="radio" id="id" name="fav_language" value="false">
+          <label for="id">PLAY WITH SAME PLATFORM</label><br>
         </div>
       </form>
     </div>
@@ -187,28 +187,27 @@
     <p>U can pick two</p>
     <form method="post" name="form_name" id="form_check">
       <label>
-        <input type="checkbox" name="check">Rotation queen
+        <input type="checkbox" name="check"> Rotation queen
       </label>
       <label>
-        <input type="checkbox" name="check" >SUPER SAVER
+        <input type="checkbox" name="check"> SUPER SAVER
       </label>
       <label>
-        <input type="checkbox" name="check">ASSISTANT
+        <input type="checkbox" name="check"> ASSISTANT
       </label>
       <label>
-        <input type="checkbox" name="check">MECHANICAL GOD
+        <input type="checkbox" name="check"> MECHANICAL GOD
       </label>
       <label>
-        <input type="checkbox" name="check">OFFENSE PRO
+        <input type="checkbox" name="check"> OFFENSE PRO
       </label>
       <label>
-        <input type="checkbox" name="check">DEFENSE PRO
+        <input type="checkbox" name="check"> DEFENSE PRO
       </label>
       <label>
-        <input type="checkbox" name="check">DOESNT MATTER
+        <input type="checkbox" name="check"> DOESNT MATTER
       </label>
     </form>
-
     <input class="btnOpslaan" type="submit" value="VOORKEUREN OPSLAAN">
   </section>
   <script src="/js/test.js"></script>
