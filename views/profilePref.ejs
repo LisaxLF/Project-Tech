@@ -1,16 +1,199 @@
-<html>
-  <head>
-    <title>This is the title</title>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
 
-  <body>
-    <h1>Welcome to User Details</h1>
-    <p><b>Name:</b> <%= user.name %></p>
-    <p><b>Email:</b> <%= user.email %></p>
-    <p><b>Stack:</b> <%= user.stack %></p>
-    <u><b>Hubbies</b></u>
-    <% user.hubby.forEach(hubby =>{ %>
-        <li><%= hubby %></li>
-    <% })%> 
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/homestyles.css">
+  <title>Gamerz</title>
+</head>
+
+<body class="settings">
+  <header>
+    <nav>
+      <a class="home">
+        <img src="/images/icons/HomeIcon.svg" alt="Hamberger menu">
+      </a>
+    </nav>
+    <img src="/images/icons/menuIcon.svg" alt="Hamberger menu">
+  </header>
+  <div>
+    <h1>Instellingen</h1>
+    <h4>my rocket profile</h4>
+  </div>
+  <article>
+    <div>
+      <div>
+        <img src="/images/gebouwen.jpg" alt="profile pic gamer">
+        <div>
+          <h3>
+            @LisaLF
+          </h3>
+          <p>5 minuten geleden actief</p>
+        </div>
+      </div>
+      <img src="/images/icons/playstationIcon.svg">
+    </div>
+    <div>
+      <ul>
+        <li>Rotation queen</li>
+        <li>Super saver</li>
+      </ul>
+    </div>
+    <article>
+      <h2>
+        Total hours played:
+      </h2>
+      <p>
+        25 days and 8 hours
+      </p>
+    </article>
+    <ul>
+      <li>Goals<p>5151</p>
+      </li>
+      <li>Assists<p>4845</p>
+      </li>
+      <li>Saves<p>4584</p>
+      </li>
+    </ul>
+    <section>
+      <div>
+        <article>
+          <article>
+            <img src="/images/icons/champ2.png">
+            <p>
+              CHAMP 2 <br>
+              DIV 1
+            </p>
+            <p>1320 MMR</p>
+          </article>
+          <div>
+            <h4>standard</h4>
+            <h5>3v3</h5>
+          </div>
+        </article>
+        <article>
+          <article>
+            <img src="/images/icons/champ2.png">
+            <p>
+              CHAMP 2 <br>
+              DIV 1
+            </p>
+            <p>1320 MMR</p>
+          </article>
+          <div>
+            <h4>doubles</h4>
+            <h5>2v2</h5>
+          </div>
+        </article>
+        <article>
+          <article>
+            <img src="/images/icons/champ2.png">
+            <p>
+              CHAMP 2 <br>
+              DIV 1
+            </p>
+            <p>1320 MMR</p>
+          </article>
+          <div>
+            <h4>duel</h4>
+            <h5>1v1</h5>
+          </div>
+        </article>
+      </div>
+    </section>
+  </article>
+  <section>
+    <div>
+      <form action="">
+        <div>
+          <label for="fname">Gamertag</label><br>
+          <input type="text" id="fname" name="fname" value="Lisa"><br>
+        </div>
+        <div>
+          <label for="lname">About me</label><br>
+          <textarea id="w3review" name="lname" rows="5" cols="50">Hi i am Lisa, 23 years old. I am currently looking for a good teammate in rocket league, cause all of my friends suck. I really want to get grand champ before the season ends!
+        </textarea>
+        </div>
+        <div>
+          <label for="fname">Crossplay</label><br>
+          <input type="radio" id="html" name="fav_language" value="HTML">
+          <label for="html">PLAY WITH OTHER PLATFORMS</label><br>
+          <input type="radio" id="css" name="fav_language" value="CSS">
+          <label for="css">PLAY WITH SAME PLATFORM</label><br>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section>
+    <h2>IM looking for</h2>
+    <h4>PREFERABLE RANK</h4>
+    <div>
+      <article>
+        <div>
+          <a><img src="/images/icons/change.png"></a>
+          <img src="/images/icons/champ2.png">
+        </div>
+        <div>
+          <h4>standard</h4>
+          <h5>3v3</h5>
+        </div>
+      </article>
+      <article>
+        <div>
+          <a><img src="/images/icons/change.png"></a>
+          <img src="/images/icons/champ2.png">
+        </div>
+        <div>
+          <h4>doubles</h4>
+          <h5>2v2</h5>
+        </div>
+      </article>
+    </div>
+    <section>
+      <ul>
+        <a><li><img src="" alt=""></li></a>
+        <a><li><img src="" alt=""></li></a>
+        <a><li><img src="" alt=""></li></a>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <h4>PREFERABLE QUALITIES</h4>
+    <p>U can pick two</p>
+    <form>
+      <label class="container">
+        <input type="checkbox" checked="checked">Rotation queen
+      </label>
+
+      <label class="container">
+        <input type="checkbox">SUPER SAVER
+      </label>
+
+      <label class="container">
+        <input type="checkbox">ASSISTANT
+      </label>
+
+      <label class="container">
+        <input type="checkbox">MECHANICAL GOD
+      </label>
+
+      <label class="container">
+        <input type="checkbox">OFFENSE PRO
+      </label>
+
+      <label class="container">
+        <input type="checkbox">DEFENSE PRO
+      </label>
+
+      <label class="container">
+        <input type="checkbox">DOESNT MATTER
+      </label>
+    </form>
+
+    <input type="submit" value="VOORKEUREN OPSLAAN">
+  </section>
+  <script src="/js/settings.js"></script>
+</body>
 </html>

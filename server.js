@@ -1,42 +1,59 @@
-// starten van express
-const express = require('express')
-const res = require('express/lib/response')
-const app = express()
-const path = require('path')
+const express = require('express');
+const res = require('express/lib/response');
+const app = express();
+const path = require('path');
+
+require('dotenv').config();
+
+
+// database
+const { MongoClient, ServerApiVersion } = require('mongodb')
+const uri = "mongodb+srv://" + process.env.DB_USERNAME + ":" + process.env.DB_PASS + "@" + process.env.DB_HOST + "/" + "?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
+
+client.connect(err => {
+	if (err) { throw err }
+})
+
+const db = client.db(process.env.DB_NAME)
 
 // port waar server op loopt
 const port = 3000
 
 // Set the View Engine or Template Engine
 app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 // static content gebruiken
 app.use(express.static(__dirname + '/static'));
 
-// een route die leidt naar de login
-app.get('/login', (req, res) => {
-    res.send('<h1> Welcome to Gamerz, login in to continue</h1>')
-})
 // een route die leidt naar de homepage
-app.get('/', function (req, res) {
-    const gamer = {
-        gamertag: "@Geert",
-        bio: "Hoi ik ben geert welkom, ik zoek goede teammates",
-        rank: ['/static/images/icons/champ.png', '/static/images/icons/champ2.png', '/static/images/icons/champ3.png' ]
-      }
-    res.render("index", {gamer});
-  })
 
-
-// een route die leidt naar profiel
-app.get('/profiel/:user/', (req, res) => {
-    console.log(`Input from ${req.params.user}`)
-    res.send('<h1>Hello ' + req.params.user + ',' + 'Dit is jouw profiel</h1>')
+app.get('/', (req, res) => {
+  db.collection('RocketGamers').find().toArray(done)
+  function done(err, data) {
+		if (err) {
+			console.log(err)
+		} else {
+			console.log(data)
+			res.render('index', {data: data});
+		}
+	}  
 })
+
+app.get('/settingsPref', (req, res) => {
+  res.render('profilePref.ejs');
+})
+
+// een route die leidt naar 404 error
+app.get('/notFound', (req, res) => {
+  res.status(404).render('notFound.ejs');
+})
+
 
 
 // de port openen zodat de server kan lopen
-app.listen(port, function(error){
-    if(error) throw error
-    console.log("Server created Successfully")
+app.listen(port, function (error) {
+  if (error) throw error
+  console.log("Server created Successfully")
 })

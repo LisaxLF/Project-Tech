@@ -12,17 +12,11 @@
 <body class="homepage">
     <header>
         <nav>
-            <a>
-                <img src="/images/icons/menuIcon.svg" alt="Hamberger menu">
+            <a class="settingsPref">
+                <img src="/images/icons/settingIcon.svg" alt="Hamberger menu">
             </a>
         </nav>
-        <div>
-            <div>
-                <img src="/images/icons/settingIcon.svg" alt="Hamberger menu">
-            </div>
-            <div>
-            </div>
-        </div>
+        <img src="/images/icons/menuIcon.svg" alt="Hamberger menu">
     </header>
     <article>
         <div>
@@ -30,57 +24,93 @@
                 <img src="/images/gebouwen.jpg" alt="profile pic gamer">
                 <div>
                     <h3>
-                        <%= gamer.gamertag %>
+                        <%= data[0] %>
                     </h3>
                     <p>5 minuten geleden actief</p>
                 </div>
             </div>
             <img src="/images/icons/playstationIcon.svg">
         </div>
-        <div></div>
+        <div>
+            <ul>
+                <li>Rotation queen</li>
+                <li>Super saver</li>
+            </ul>
+        </div>
+        <article>
+            <h2>
+                Total hours played:
+            </h2>
+            <p>
+                25 days and 8 hours
+            </p>
+        </article>
+        <ul>
+            <li>Goals<p>5151</p>
+            </li>
+            <li>Assists<p>4845</p>
+            </li>
+            <li>Saves<p>4584</p>
+            </li>
+        </ul>
+        <article>
+            <h2>
+                About me
+            </h2>
+            <p>
+                Hi i am Lisa, 23 years old. I am currently looking for a good teammate in rocket league, cause all
+                of my friends suck. I really want to get grand champ before the season ends!
+            </p>
+        </article>
         <section>
-            <article>
-                <h2>
-                    About me
-                </h2>
-                <p>
-                    <%= gamer.bio %>
-                </p>
-            </article>
-            <section>
-                <h2>
-                    Game Library
-                </h2>
-                <article class="game">
-                    <div class="banner">
-                        <div class="hoursplayed">
-                            <p>
-                                TOTAL HOURS PLAYED:
-                            </p>
-                            <P>
-                                44 days and 8 hours
-                            </P>
-                        </div>
-                        <div class="ranks">
-                            <div class="rank">
-                                <p>duel</p>
-                                <p>1v1</p>
-                                <img src= images/icons/champ.png>
-                            </div>
-                            <div class="rank">
-                                <p>doubles</p>
-                                <p>2v2</p>
-                                <img src="/images/icons/champ2.png">
-                            </div>
-                            <div class="rank">
-                                <p>standard</p>
-                                <p>3v3</p>
-                                <img src="/images/icons/champ3.png">
-                            </div>
-                        </div>
+            <h2>
+                My ranks
+            </h2>
+            <div>
+                <article>
+                    <article>
+                        <img src="/images/icons/champ2.png">
+                        <p>
+                            CHAMP 2 <br>
+                            DIV 1
+                        </p>
+                        <p>1320 MMR</p>
+                    </article>
+                    <div>
+                        <h4>standard</h4>
+                        <h5>3v3</h5>
                     </div>
                 </article>
-            </section>
+                <article>
+                    <article>
+                        <img src="/images/icons/champ2.png">
+                        <p>
+                            CHAMP 2 <br>
+                            DIV 1
+                        </p>
+                        <p>1320 MMR</p>
+                    </article>
+                    <div>
+                        <h4>doubles</h4>
+                        <h5>2v2</h5>
+                    </div>
+                </article>
+                <article>
+                    <article>
+                        <img src="/images/icons/champ2.png">
+                        <p>
+                            CHAMP 2 <br>
+                            DIV 1
+                        </p>
+                        <p>1320 MMR</p>
+                    </article>
+                    <div>
+                        <h4>duel</h4>
+                        <h5>1v1</h5>
+                    </div>
+                </article>
+            </div>
+        </section>
     </article>
     <section>
         <button>
@@ -90,7 +120,6 @@
             <img src="/images/icons/Correct.svg" alt="match">
         </button>
     </section>
-
+    <script src="/js/index.js"></script>
 </body>
-
 </html>
