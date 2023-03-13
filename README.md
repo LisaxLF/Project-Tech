@@ -1,3 +1,5 @@
+![Banner for RocketFinderz](banner.png)
+
 # Project-Tech
 Project Tech is a project i'm working on for Hogeschool van Amsterdam | CMD. This is my repository in which i will continue to share and update files about the matching-application assignment.
 
