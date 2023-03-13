@@ -1,4 +1,4 @@
-![Banner for RocketFinderz](banner.png)
+![Banner for Rock![banner](https://user-images.githubusercontent.com/112825800/224833189-01ca884d-b4dd-49d8-90a0-7f404b795af9.png)
 
 # Project-Tech
 Project Tech is a project i'm working on for Hogeschool van Amsterdam | CMD. This is my repository in which i will continue to share and update files about the matching-application assignment.
