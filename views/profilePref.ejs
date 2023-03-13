@@ -106,111 +106,106 @@
   </article>
   <section>
     <div>
-      <form id="form_text" action="/profilePref.ejs" method="post">
+      <form action="/userSettings" method="post">
         <div>
           <label for="id">Gamertag</label><br>
-          <input type="text" id="id" name="" value="<%= data[0].gamerTag %>"><br>
+          <input type="text" id="id" name="gamerTag" value="<%= data[0].gamerTag %>"><br>
         </div>
         <div>
           <label for="id">About me</label><br>
-          <textarea id="id" name="user_gamerbio" rows="5" cols="50" value="gamerBio" > <%= data[0].gamerBio %>
+          <textarea id="id" name="gamerBio" rows="5" cols="50"><%= data[0].gamerBio %>
         </textarea>
         </div>
-        <div>
-          <label for="id">Crossplay</label><br>
-          <input type="radio" id="id" name="fav_language" value="crossplayOn">
-          <label for="id">PLAY WITH OTHER PLATFORMS</label><br>
-          <input type="radio" id="id" name="fav_language" value="crossplayOff">
-          <label for="id">PLAY WITH SAME PLATFORM</label><br>
-        </div>
+        <input type="submit" value="PROFIEL OPSLAAN">
       </form>
     </div>
   </section>
   <section>
     <h2>IM looking for</h2>
     <h4>PREFERABLE RANK</h4>
-    <div>
+    <form action="/teammateSettings" name="teammateSettings" method="post">
       <article>
-        <div>
-          <a class="editStandard"><img src="/images/icons/change.png"></a>
-          <img class='currentImgStandard' src="/images/icons/champ2.png">
-          <div class="sliderStandard">
-            <div class="slideStandard" id="slideStandard-1"> <a>
-                <img src="/images/icons/champ.png">
-              </a></div>
-            <div class="slideStandard" id="slideStandard-2">
-              <a>
-                <img src="/images/icons/champ2.png">
-              </a>
-            </div>
-            <div class="slideStandard" id="slideStandard-3">
-              <a>
-                <img src="/images/icons/champ3.png">
-              </a>
-            </div>
-          </div>
-        </div>
-        <div>
+        <img class="editStandard" src="/images/icons/change.png">
+        <img class='currentImgStandard' src="/images/icons/champ.png">
+        <fieldset class="sliderStandard">
+          <label class="slideStandard" id="slideStandard-1">
+            <input type="radio" id="optie-1" name="rank" value="champ">
+            <div id="img-optie-1"></div>
+          </label>
+          <label class="slideStandard" id="slideStandard-2">
+            <input type="radio" id="optie-2" name="rank" value="champ2">
+            <div id="img-optie-2"></div>
+          </label>
+          <label class="slideStandard" id="slideStandard-3">
+            <input type="radio" id="optie-3" name="rank" value="champ3">
+            <div id="img-optie-3"></div>
+          </label>
+        </fieldset>
+        <div class="gamemodeStandardText">
           <h4>standard</h4>
           <h5>3v3</h5>
         </div>
       </article>
       <article>
-        <div>
-          <a class="editDoubles"><img src="/images/icons/change.png"></a>
-          <img class='currentImgDoubles' src="/images/icons/champ2.png">
-          <div class="sliderDoubles">
-            <div class="slideDoubles" id="slideDoubles-1"> <a>
-                <img src="/images/icons/champ.png">
-              </a></div>
-            <div class="slideDoubles" id="slideDoubles-2">
-              <a>
-                <img src="/images/icons/champ2.png">
-              </a>
-            </div>
-            <div class="slideDoubles" id="slideDoubles-3">
-              <a>
-                <img src="/images/icons/champ3.png">
-              </a>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h4>doubles</h4>
-          <h5>2v2</h5>
+        <img class="editDoubles" src="/images/icons/change.png">
+        <img class='currentImgDoubles' src="/images/icons/champ.png">
+        <fieldset class="sliderDoubles">
+          <label class="slideDoubles" id="slideDoubles-1">
+            <input type="radio" id="optie-1" name="rank" value="champ">
+            <div id="img-optie-1"></div>
+          </label>
+          <label class="slideDoubles" id="slideDoubles-2">
+            <input type="radio" id="optie-2" name="rank" value="champ2">
+            <div id="img-optie-2"></div>
+          </label>
+          <label class="slideDoubles" id="slideDoubles-3">
+            <input type="radio" id="optie-3" name="rank" value="champ3">
+            <div id="img-optie-3"></div>
+          </label>
+        </fieldset>
+        <div class="gamemodeDoublesText">
+          <h4>standard</h4>
+          <h5>3v3</h5>
         </div>
       </article>
-    </div>
-  </section>
-  <section>
-    <h4>PREFERABLE QUALITIES</h4>
-    <p>U can pick two</p>
-    <form method="post" name="form_name" id="form_check">
-      <label>
-        <input type="checkbox" name="check" value="ROTATIONQUEEN"> Rotation queen
-      </label>
-      <label>
-        <input type="checkbox" name="check" value="SUPERSAVER" > SUPER SAVER
-      </label>
-      <label>
-        <input type="checkbox" name="check" value="ASSISTANT"> ASSISTANT
-      </label>
-      <label>
-        <input type="checkbox" name="check" value="MECHANICALGOD"> MECHANICAL GOD
-      </label>
-      <label>
-        <input type="checkbox" name="check" value="OFFENSEPRO"> OFFENSE PRO
-      </label>
-      <label>
-        <input type="checkbox" name="check" value="DEFENSEPRO"> DEFENSE PRO
-      </label>
-      <label>
-        <input type="checkbox" name="check" value="DOESNTMATTER"> DOESNT MATTER
-      </label>
+      <section id="checkboxgroup">
+        <h4>PREFERABLE QUALITIES</h4>
+        <p>U can pick two</p>
+        <label>
+          <input type="checkbox" value="ROTATIONQUEEN" name="check">ROTATION QUEEN
+        </label>
+        <label>
+          <input type="checkbox" value="SUPERSAVER" name="check">SUPER SAVER
+        </label>
+        <label>
+          <input type="checkbox" value="ASSISTANT" name="check">ASSISTANT
+        </label>
+        <label>
+          <input type="checkbox" value="MECHANICALGOD" name="check">MECHANICAL GOD
+        </label>
+        <label>
+          <input type="checkbox" value="OFFENSEPRO" name="check">OFFENSE PRO
+        </label>
+        <label>
+          <input type="checkbox" value="DEFENSEPRO" name="check">DEFENSE PRO
+        </label>
+        <label>
+          <input type="checkbox" value="DOESNTMATTER" name="check">DOESNT MATTER
+        </label>
+      </section>
+      <div>
+        <h4>Crossplay</h4>
+        <div>
+          <input type="radio" id="id" name="crossplayOn" value="crossplayOn">
+          <label for="id">PLAY WITH OTHER PLATFORMS</label><br>
+        </div>
+        <div>
+          <input type="radio" id="id" name="crossplayOff" value="crossplayOff">
+          <label for="id">PLAY WITH SAME PLATFORM</label><br>
+        </div>
+      </div>
+      <input type="submit" value="VOORKEUREN OPSLAAN">
     </form>
-    <input class="btnOpslaan" type="submit" value="VOORKEUREN OPSLAAN">
-  </section>
-  <script src="/js/test.js"></script>
+    <script src="/js/test.js"></script>
 </body>
-
 </html>

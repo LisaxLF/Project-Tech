@@ -1,13 +1,11 @@
 const EditRankStandard = document.querySelector('.editStandard');
-const EditRankDoubles = document.querySelector('.editDoubles');
+const editRankDoubles = document.querySelector('.editDoubles');
 
-let CurrentStandardImg = document.querySelector('.currentImgStandard');
-const StandardRank = document.querySelector('.settings section:nth-of-type(2) > div:first-of-type > article:first-of-type > div:nth-of-type(2)');
+let currentStandardImg = document.querySelector('.currentImgStandard');
+const standardRank = document.querySelector('.gamemodeStandardText');
 
-let CurrentDoublesImg = document.querySelector('.currentImgDoubles');
-const DoublesRank = document.querySelector('.settings section:nth-of-type(2) > div:first-of-type > article:nth-of-type(2) > div:nth-of-type(2)');
-
-const cards = document.querySelector('.settings section:nth-of-type(2) div:first-of-type article:first-of-type')
+let currentDoublesImg = document.querySelector('.currentImgDoubles');
+const doublesRank = document.querySelector('.gamemodeDoublesText');
 
 const rankMenuDoubles = document.querySelector('.sliderDoubles');
 const champDoubles = document.querySelector('#slideDoubles-1');
@@ -21,62 +19,51 @@ const champ3Standard = document.querySelector('#slideStandard-3');
 
 const prefRanked = ['/images/icons/champ.png', '/images/icons/champ2.png', '/images/icons/champ3.png'];
 
-function PreferedRankForMatchingStandard(Rank) {
-    CurrentStandardImg.src = Rank;
-    closeMenuStandard();
+function chooseRank(type, Rank) {
+  const currentImg = type === 'standard' ? currentStandardImg : currentDoublesImg;
+  const rankElement = type === 'standard' ? standardRank : doublesRank;
+  const rankMenu = type === 'standard' ? rankMenuStandard : rankMenuDoubles;
+
+  currentImg.src = Rank;
+  closeMenu(type);
 }
 
-function ChoosingRankDoubles(Rank) {
-    CurrentDoublesImg.src = Rank;
-    closeMenuDoubles();
+function openMenu(type) {
+  const currentImg = type === 'standard' ? currentStandardImg : currentDoublesImg;
+  const rankElement = type === 'standard' ? standardRank : doublesRank;
+  const rankMenu = type === 'standard' ? rankMenuStandard : rankMenuDoubles;
+
+  currentImg.style.display = "none";
+  rankElement.style.display = "none";
+  rankMenu.style.display = "block";
 }
 
-champStandard.addEventListener('click', PreferedRankForMatchingStandard.bind(this, prefRanked[0]));
-champ2Standard.addEventListener('click', PreferedRankForMatchingStandard.bind(this, prefRanked[1]));
-champ3Standard.addEventListener('click', PreferedRankForMatchingStandard.bind(this, prefRanked[2]));
-EditRankStandard.addEventListener('click', openMenuStandard);
+function closeMenu(type) {
+  const currentImg = type === 'standard' ? currentStandardImg : currentDoublesImg;
+  const rankElement = type === 'standard' ? standardRank : doublesRank;
+  const rankMenu = type === 'standard' ? rankMenuStandard : rankMenuDoubles;
 
-champDoubles.addEventListener('click', ChoosingRankDoubles.bind(this, prefRanked[0]));
-champ2Doubles.addEventListener('click', ChoosingRankDoubles.bind(this, prefRanked[1]));
-champ3Doubles.addEventListener('click', ChoosingRankDoubles.bind(this, prefRanked[2]));
-EditRankDoubles.addEventListener('click', openMenuDoubles);
-
-function openMenuStandard() {
-    CurrentStandardImg.style.display = "none";
-    StandardRank.style.display = "none";
-    rankMenuStandard.style.display = "block";
+  currentImg.style.display = "flex";
+  rankElement.style.display = "flex";
+  rankMenu.style.display = "none";
 }
 
-function closeMenuStandard() {
-    CurrentStandardImg.style.display = "block";
-    StandardRank.style.display = "block";
-    rankMenuStandard.style.display = "none";
-}
+// addEventListeners
+champStandard.addEventListener('click', chooseRank.bind(this, 'standard', prefRanked[0]));
+champ2Standard.addEventListener('click', chooseRank.bind(this, 'standard', prefRanked[1]));
+champ3Standard.addEventListener('click', chooseRank.bind(this, 'standard', prefRanked[2]));
+EditRankStandard.addEventListener('click', openMenu.bind(this, 'standard'));
 
-function openMenuDoubles() {
-    CurrentDoublesImg.style.display = "none";
-    DoublesRank.style.display = "none";
-    rankMenuDoubles.style.display = "block";
-}
+champDoubles.addEventListener('click', chooseRank.bind(this, 'doubles', prefRanked[0]));
+champ2Doubles.addEventListener('click', chooseRank.bind(this, 'doubles', prefRanked[1]));
+champ3Doubles.addEventListener('click', chooseRank.bind(this, 'doubles', prefRanked[2]));
+editRankDoubles.addEventListener('click', openMenu.bind(this, 'doubles'));
 
-function closeMenuDoubles() {
-    CurrentDoublesImg.style.display = "block";
-    DoublesRank.style.display = "block";
-    rankMenuDoubles.style.display = "none";
-}
 
 // FORM
-const btnOpslaan = document.querySelector('.btnOpslaan')
-btnOpslaan.addEventListener('click', SubmitForms);
-
-function SubmitForms() {
-    document.getElementById("form_text").submit();
-    document.getElementById("form_check").submit();
-}
-
 // https://roytuts.com/limit-number-of-checkbox-selections-using-javascript/
 function checkBoxLimit() {
-    var checkBoxGroup = document.forms['form_name']['check'];
+    var checkBoxGroup = document.forms['teammateSettings']['check'];
     var limit = 2;
     for (var i = 0; i < checkBoxGroup.length; i++) {
         checkBoxGroup[i].onclick = function () {
@@ -85,7 +72,12 @@ function checkBoxLimit() {
                 checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
             }
             if (checkedcount > limit) {
+                const warningText = document.querySelector('.settings section:nth-of-type(2) form > section > p');
                 alert("You can select maximum of " + limit + " checkboxes.");
+                warningText.style.color = "red";
+                setTimeout(function() {
+                    warningText.style.color = "white";
+                }, 1000);
                 this.checked = false;
             }
         }
