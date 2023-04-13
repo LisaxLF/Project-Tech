@@ -36,6 +36,7 @@ function openMenu(type) {
   currentImg.style.display = "none";
   rankElement.style.display = "none";
   rankMenu.style.display = "block";
+  checkboxes.style.opacity = "0";
 }
 
 function closeMenu(type) {
@@ -63,25 +64,54 @@ editRankDoubles.addEventListener('click', openMenu.bind(this, 'doubles'));
 // FORM
 // https://roytuts.com/limit-number-of-checkbox-selections-using-javascript/
 function checkBoxLimit() {
-    var checkBoxGroup = document.forms['teammateSettings']['check'];
-    var limit = 2;
-    for (var i = 0; i < checkBoxGroup.length; i++) {
-        checkBoxGroup[i].onclick = function () {
-            var checkedcount = 0;
-            for (var i = 0; i < checkBoxGroup.length; i++) {
-                checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
-            }
-            if (checkedcount > limit) {
-                const warningText = document.querySelector('.settings section:nth-of-type(2) form > section > p');
-                alert("You can select maximum of " + limit + " checkboxes.");
-                warningText.style.color = "red";
-                setTimeout(function() {
-                    warningText.style.color = "white";
-                }, 1000);
-                this.checked = false;
-            }
-        }
+  var checkBoxGroup = document.forms['teammateSettings']['check'];
+  var limit = 2;
+  for (var i = 0; i < checkBoxGroup.length; i++) {
+    checkBoxGroup[i].onclick = function () {
+      var checkedcount = 0;
+      for (var i = 0; i < checkBoxGroup.length; i++) {
+        checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
+      }
+      if (checkedcount > limit) {
+        const warningText = document.querySelector('.settings section:nth-of-type(2) form > section > p');
+        alert("You can select maximum of " + limit + " checkboxes.");
+        warningText.style.color = "red";
+        setTimeout(function () {
+          warningText.style.color = "white";
+        }, 1000);
+        this.checked = false;
+      }
     }
+  }
 }
 
 checkBoxLimit();
+
+// LOADING SCREEN
+const SaveBtn = document.querySelector('.saveButton');
+const loadingContent = document.querySelector('#loading-screen');
+const pageContent = document.querySelector('#content-screen');
+const BodyEl = document.querySelector("body");
+const factsHolder = document.querySelector(".factholder");
+const apiUrl = "https://uselessfacts.jsph.pl/random.json?language=en";
+
+SaveBtn.addEventListener('click', () => {
+  loadingContent.style.display = "flex";
+  pageContent.style.display = "none";
+
+  // wacht 3 seconden voordat het loading scherm verdwijnt
+  setTimeout(function () {
+    fetch(apiUrl)
+    .then(response => response.json())
+    .then(fact => {
+      factsHolder.innerHTML = fact.text;
+      console.log(fact)
+    })
+    .catch(error => console.error(error));
+    loadingContent.style.display = "none";
+    pageContent.style.display = "flex";
+    BodyEl.style.height = "100vh";
+  }, 4000);
+});
+
+// API

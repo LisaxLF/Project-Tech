@@ -110,8 +110,7 @@ app.post("/userSettings", async (req, res) => {
 });
 
 app.post('/teammateSettings', async (req, res) => {
-  console.log(req.body);
-  res.redirect('/newMatch')
+  res.redirect('/settingsPref')
 })
 
 // een route die leidt naar 404 error

@@ -1,22 +1,14 @@
-const settingEl = document.querySelector('.homepage .settingsPref')
+// VIBRATION API
+// Add a swipe event listener to the card
+const matchingCard = document.querySelector(".swiperight")
 
-settingEl.addEventListener('click', () => window.location.replace('/settingsPref'));
-
-// API ROCKET LEAGUE
-const options = {
-	method: 'GET',
-	headers: {
-		'User-Agent': 'RapidAPI Playground',
-		'Accept-Encoding': 'identity',
-		'X-RapidAPI-Key': '7ddecef64amsh5c02ed8b29dcec9p183898jsncfd3fe96d42b',
-		'X-RapidAPI-Host': 'rocket-league1.p.rapidapi.com'
+matchingCard.addEventListener("click", function (event) {
+	// Controleert of de Vibration API word gesupport
+	if ("vibrate" in navigator) {
+		// Vibrate heel kort
+		navigator.vibrate(100);
+	} else {
+		// Als de Vibration API niet word gesupport
+		console.log("Vibration not supported");
 	}
-};
-
-fetch('https://rocket-league1.p.rapidapi.com/ranks/LisaLF', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
-
-
+});

@@ -12,13 +12,15 @@
 <body class="homepage">
     <header>
         <nav>
-            <a class="settingsPref">
+            <a>
                 <img src="/images/icons/settingIcon.svg" alt="Hamberger menu">
             </a>
         </nav>
-        <img src="/images/icons/menuIcon.svg" alt="Hamberger menu">
+        <a href="/settingsPref">
+            <img src="/images/icons/menuIcon.svg" alt="Hamberger menu">
+        </a>
     </header>
-    <article>
+    <article class="card">
         <div>
             <div>
                 <img src="<%= data[0].gamerPhoto %>" alt="profile pic gamer">
@@ -114,7 +116,7 @@
         <button>
             <img src="/images/icons/cancel.svg" alt="no match">
         </button>
-        <button>
+        <button class="swiperight">
             <img src="/images/icons/Correct.svg" alt="match">
         </button>
     </section>
